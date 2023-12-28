@@ -10,7 +10,7 @@ Em desenvolvimento ⚙️
 - Tailwind
   
 ## Server side:
-- Http Server (with native js)
-- Amazon Web Service
-- Sharp
+- Http Server (With native js)
+- Amazon Web Service (S3)
+- Sharp (To treat images)
 
