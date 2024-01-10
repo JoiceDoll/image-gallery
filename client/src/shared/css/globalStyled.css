@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  outline: 0;
   box-sizing: border-box;
 }
 
@@ -9,6 +10,11 @@ body {
   font-family: "Inter", sans-serif;
   width: 100vw;
   height: 100vh;
+  text-rendering: optimizeLegibility;
 }
 
-
+html,
+body,
+#root {
+  height: 100%;
+}
