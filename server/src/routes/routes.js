@@ -8,7 +8,7 @@ const router = (req, res) => {
     res.end("Home page test");
   } else {
     res.writeHead(404, { "Content-Type": "text/plain" });
-    res.end("404 Página não encontrada.");
+    res.end("404 Not found.");
   }
 };
 
