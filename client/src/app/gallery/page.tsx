@@ -1,5 +1,5 @@
 "use client";
-import { UploadImages } from "./components/UploadImages";
+import { UploadImages } from "@/app/gallery/components/UploadImages";
 
 export default function Gallery() {
   return (
