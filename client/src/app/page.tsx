@@ -1,14 +1,10 @@
 "use client";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import Link from "next/link";
 import * as Yup from "yup";
+import { Input } from "@/shared/components";
 
 export default function Home() {
-  const data = [
-    { name: "username", type: "text" },
-    { name: "password", type: "password" },
-  ];
-
   const handleSubmit = (values: any) => {
     console.log("submit");
   };
@@ -38,20 +34,8 @@ export default function Home() {
               onSubmit={handleSubmit}
             >
               <Form className="flex flex-col justify-around">
-                {data.map((result, index) => (
-                  <div key={index} className="flex flex-col my-1">
-                    <Field
-                      name={result.name}
-                      type={result.type}
-                      className="w-full bg-inherit border border-white h-[2.3rem] p-5 m align-middle text-white placeholder-white "
-                    />
-                    <ErrorMessage
-                      name={result.name}
-                      component="div"
-                      className="error text-red-500"
-                    />
-                  </div>
-                ))}
+                <Input name={"email"} type={"text"} label={"Username"} />
+                <Input name={"password"} type={"password"} label={"Senha"} />
                 <button
                   type="submit"
                   className="bg-custom-blue-color w-[25%] sm:w-[20%] hover:bg-custom-hover-green"

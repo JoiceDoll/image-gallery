@@ -1,6 +1,6 @@
 "use client";
-
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Input, Button } from "@/shared/components";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
 export default function Register() {
@@ -9,12 +9,6 @@ export default function Register() {
     email: string;
     password: string;
   }
-
-  const data = [
-    { name: "username", type: "text" },
-    { name: "email", type: "email" },
-    { name: "password", type: "password" },
-  ];
 
   const handleSubmit = (values: IValues) => {
     console.log(values);
@@ -44,30 +38,11 @@ export default function Register() {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        <Form>
-          {data.map((result) => (
-            <div key={result.name} className="mb-4">
-              <label htmlFor={result.name} className="text-white block mb-1">
-                {result.name.charAt(0).toUpperCase() + result.name.slice(1)}
-              </label>
-              <Field
-                name={result.name}
-                type={result.type}
-                className="w-full bg-inherit p-2 border border-white text-white"
-              />
-              <ErrorMessage
-                name={result.name}
-                component="div"
-                className="error text-red-500 mt-1"
-              />
-            </div>
-          ))}
-          <button
-            type="submit"
-            className=" text-white p-2 rounded w-[100%] bg-custom-blue-color hover:bg-custom-hover-blue-color"
-          >
-            Registrar
-          </button>
+        <Form className=" h-[50vh] flex justify-between flex-col">
+          <Input name={"username"} type={"text"} label={"Username"} />
+          <Input name={"email"} type={"email"} label={"E-mail"} />
+          <Input name={"password"} type={"password"} label={"Senha"} />
+          <Button text={"Registrar-se"} />
         </Form>
       </Formik>
     </div>
